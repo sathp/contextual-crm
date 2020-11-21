@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "neo4j-driver": "^4.2.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4"
   }
 }
