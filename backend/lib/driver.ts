@@ -1,8 +1,11 @@
+import * as dotenv from 'dotenv'; // Move to entry point of code later on, probably src/app.ts
 import neo4j from "neo4j-driver";
 
+dotenv.config();
+
 const driver: typeof neo4j.Driver = neo4j.driver(
-    "neo4j://68.183.111.22:7687", 
-    neo4j.auth.basic('neo4j', 'Rbd@4goq5f7K7V')
+    process.env.DB_HOST, 
+    neo4j.auth.basic(process.env.DB_USER, process.env.DB_PASS)
 )
 const session: typeof neo4j.Session = driver.session({defaultAccessMode: neo4j.session.READ});
 
